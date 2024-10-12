@@ -39,7 +39,7 @@ class PythonicModelQuerySet(models.QuerySet):
                     # TODO: Verify that source_identifier=None is really what I want?
                     source_identifier=None,
                 )
-                .prefetch_related("node_set", "node_set__nodegroup")
+                .prefetch_related("node_set")
                 .get()
             )
         except GraphModel.DoesNotExist as e:
@@ -53,7 +53,7 @@ class PythonicModelQuerySet(models.QuerySet):
         for node in source_graph.node_set.all():
             if node.datatype == "semantic":
                 continue
-            if node.nodegroup is None:
+            if node.nodegroup_id is None:
                 continue
             if (defer and node.alias in defer) or (only and node.alias not in only):
                 continue
