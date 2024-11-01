@@ -25,7 +25,7 @@ define([
                 self.items.push({
                     image: searchImageUrl,
                     title: search.SEARCH_NAME[arches.activeLanguage].value,
-                    subtitle: search.SEARCH_DESCRIPTION[arches.activeLanguage].value,
+                    subtitle: search.SEARCH_DESCRIPTION ? search.SEARCH_DESCRIPTION[arches.activeLanguage].value : "",
                     searchUrl: search.SEARCH_URL[arches.activeLanguage].value
                 });
             });
