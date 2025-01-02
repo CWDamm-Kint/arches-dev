@@ -37,6 +37,14 @@ body {
     font-size: 1.4rem;
 }
 
+main {
+    max-width: calc(100vw - 50px);
+}
+
+header {
+    max-width: calc(100vw - 50px);
+}
+
 img {
     image-orientation: from-image;
 }
@@ -5572,14 +5580,19 @@ div.card-grid-item.selected {
 .ep-tools-title {
     width: 100%;
     height: 50px;
-    overflow: hidden;
+    // overflow: hidden;
     display: flex;
+    border-left: 3px solid red;
 }
 
 .ep-graph-title {
     font-size: 1.6rem;
     padding: 5px;
     align-items: center;
+}
+
+h1.page-header.text-overflow.ep-graph-title.flex {
+    white-space: normal; 
 }
 
 .ep-graph-title-icon {
@@ -12914,3 +12927,7 @@ table.csv-mapping-table td {
         width: auto;
     }
 }
+
+
+
+
